@@ -1,7 +1,7 @@
 JSONNeverDie ![Platform](https://img.shields.io/cocoapods/p/Kingfisher.svg?style=flat) ![License](https://img.shields.io/cocoapods/l/Kingfisher.svg?style=flat) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ---------
 
-JSONNeverDie aims to be a user friendly JSON encode / decoder which never die.
+JSONNeverDie aims to be a user friendly JSON encode / decoder for iOS written with pure Swift which never die.
 
 ## Features
 
