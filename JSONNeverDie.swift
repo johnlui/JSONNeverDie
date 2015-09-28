@@ -177,7 +177,7 @@ extension JSONND: DictionaryLiteralConvertible {
             var d = dictionary
             d[element.0] = element.1
             return d
-            })
+        })
     }
 }
 // stolen from SwiftyJSON
