@@ -6,7 +6,7 @@ JSONNeverDie aims to be a user friendly JSON encoder / decoder for iOS written w
 ## Features
 
 - [x] supports all types: Int, Float, Bool, String, Array
-- [x] user friendly: Xcode can prompt all available methods
+- [x] user friendly: Xcode can prompt all available types
 - [x] provides both Optional-type(Int?) and Original-type(Int)
 - [x] well tested
 
@@ -78,7 +78,7 @@ if let jsonArray = json["array"].array {
 let value = json["array"].arrayValue[0]["key"].int
 ```
 
-### Xcode can prompt all available methods
+### Xcode can prompt all available types
 
 ![pic](http://1.staticonsae.sinaapp.com/images/QQ20150927-1@2x.png)
 
