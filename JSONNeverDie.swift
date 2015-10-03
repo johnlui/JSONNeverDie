@@ -9,44 +9,29 @@
 import Foundation
 
 public struct JSONND {
-    public var jsonObject: AnyObject!
+    public var data: AnyObject!
     public static func initWithData(data: NSData) -> JSONND! {
         do {
-            return JSONND(jsonObject: try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments))
+            return JSONND(data: try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments))
         } catch let error as NSError {
             let e = NSError(domain: "JSONNeverDie.JSONParseError", code: error.code, userInfo: error.userInfo)
             NSLog(e.localizedDescription)
             return JSONND()
         }
     }
-    public var jsonString: String? {
-        let jsonNDElement = JSONNDElement(data: self.jsonObject)
-        return jsonNDElement.jsonString
-    }
-    public var jsonStringValue: String {
-        let jsonNDElement = JSONNDElement(data: self.jsonObject)
-        return jsonNDElement.jsonStringValue
-    }
-    public subscript (index: String) -> JSONNDElement {
-        let jsonNDElement = JSONNDElement(data: self.jsonObject)
-        return jsonNDElement[index]
-    }
-}
-
-public struct JSONNDElement {
-    public var data: AnyObject!
+    public init() {}
     public init(data: AnyObject!) {
         self.data = data
     }
-    public subscript (index: String) -> JSONNDElement {
+    public subscript (index: String) -> JSONND {
         if let jsonDictionary = self.data as? Dictionary<String, AnyObject> {
             if let value = jsonDictionary[index] {
-                return JSONNDElement(data: value)
+                return JSONND(data: value)
             } else {
                 NSLog("JSONNeverDie: No such key '\(index)'")
             }
         }
-        return JSONNDElement(data: nil)
+        return JSONND(data: nil)
     }
     public var jsonString: String? {
         get {
@@ -142,13 +127,13 @@ public struct JSONNDElement {
             }
         }
     }
-    public var array: [JSONNDElement]? {
+    public var array: [JSONND]? {
         get {
             if let _ = self.data {
                 if let arr = self.data as? Array<AnyObject> {
-                    var result = Array<JSONNDElement>()
+                    var result = Array<JSONND>()
                     for i in arr {
-                        result.append(JSONNDElement(data: i))
+                        result.append(JSONND(data: i))
                     }
                     return result
                 } else {
@@ -159,7 +144,7 @@ public struct JSONNDElement {
             }
         }
     }
-    public var arrayValue: [JSONNDElement] {
+    public var arrayValue: [JSONND] {
         get {
             if let i = self.array {
                 return i
@@ -173,7 +158,7 @@ public struct JSONNDElement {
 // stolen from SwiftyJSON
 extension JSONND: DictionaryLiteralConvertible {
     public init(dictionaryLiteral elements: (String, AnyObject)...) {
-        self.init(jsonObject: elements.reduce([String : AnyObject]()){(dictionary: [String : AnyObject], element:(String, AnyObject)) -> [String : AnyObject] in
+        self.init(data: elements.reduce([String : AnyObject]()){(dictionary: [String : AnyObject], element:(String, AnyObject)) -> [String : AnyObject] in
             var d = dictionary
             d[element.0] = element.1
             return d
@@ -183,6 +168,6 @@ extension JSONND: DictionaryLiteralConvertible {
 // stolen from SwiftyJSON
 extension JSONND: ArrayLiteralConvertible {
     public init(arrayLiteral elements: AnyObject...) {
-        self.init(jsonObject: elements)
+        self.init(data: elements)
     }
 }

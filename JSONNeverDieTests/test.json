@@ -10,9 +10,27 @@
               {"key": "🐶"},
               {"key": 0.02}
               ],
-    "arrya_values": [
+    "array_values": [
                      10000, "🙈", 0.03
                      ],
     "float": 0.01,
-    "int": 10086
+    "int": 10086,
+    "test_model": {
+        "hey": {
+            "man": {
+                "hello": true
+            }
+        },
+        "string": "🐳",
+        "array": [
+                  {"key": 10000},
+                  {"key": 10001},
+                  {"key": 10002}
+                  ],
+        "array_values": [
+                         20000, 20001, 20002
+                         ],
+        "float": 0.01,
+        "int": 10086
+    }
 }

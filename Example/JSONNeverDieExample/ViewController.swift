@@ -14,9 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world")!)!
+        let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world&hello2=123")!)!
         let json = JSONND.initWithData(data)
         print(json["args"]["hello"].stringValue)
+        print(json.jsonString)
+        
         if let url = NSURL(string: "http://httpbin.org/get?hello=world") {
             if let data = NSData(contentsOfURL: url) {
                 let json = JSONND.initWithData(data)
@@ -24,7 +26,6 @@ class ViewController: UIViewController {
                 print("GOT string for key 'hello': ", json["args"]["hello"].stringValue)
             }
         }
-        let string = json.jsonString
     }
 
     override func didReceiveMemoryWarning() {

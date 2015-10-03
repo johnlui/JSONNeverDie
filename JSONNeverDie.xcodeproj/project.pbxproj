@@ -10,6 +10,9 @@
 		C81DD4341BB7DB35007CE97E /* JSONNeverDieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DD4331BB7DB35007CE97E /* JSONNeverDieTests.swift */; };
 		C81DD4361BB7DB35007CE97E /* JSONNeverDie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88A50991BB683890054E3A4 /* JSONNeverDie.framework */; settings = {ASSET_TAGS = (); }; };
 		C81DD43D1BB7DCA7007CE97E /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = C81DD43C1BB7DCA7007CE97E /* test.json */; settings = {ASSET_TAGS = (); }; };
+		C86D3D2B1BBF8A9B007FBA24 /* JSONNDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D3D2A1BBF8A9B007FBA24 /* JSONNDModel.swift */; settings = {ASSET_TAGS = (); }; };
+		C86D3D2D1BBFBA63007FBA24 /* JSONNDModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D3D2C1BBFBA63007FBA24 /* JSONNDModelTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C86D3D2F1BBFBB9B007FBA24 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D3D2E1BBFBB9B007FBA24 /* TestModel.swift */; settings = {ASSET_TAGS = (); }; };
 		C88A509D1BB683890054E3A4 /* JSONNeverDie.h in Headers */ = {isa = PBXBuildFile; fileRef = C88A509C1BB683890054E3A4 /* JSONNeverDie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C89EB9CF1BB7ECFF00207C75 /* JSONNeverDie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89EB9CE1BB7ECFF00207C75 /* JSONNeverDie.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -29,6 +32,9 @@
 		C81DD4331BB7DB35007CE97E /* JSONNeverDieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNeverDieTests.swift; sourceTree = "<group>"; };
 		C81DD4351BB7DB35007CE97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C81DD43C1BB7DCA7007CE97E /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		C86D3D2A1BBF8A9B007FBA24 /* JSONNDModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONNDModel.swift; sourceTree = "<group>"; };
+		C86D3D2C1BBFBA63007FBA24 /* JSONNDModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONNDModelTests.swift; sourceTree = "<group>"; };
+		C86D3D2E1BBFBB9B007FBA24 /* TestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		C88A50991BB683890054E3A4 /* JSONNeverDie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONNeverDie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88A509C1BB683890054E3A4 /* JSONNeverDie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONNeverDie.h; sourceTree = "<group>"; };
 		C88A509E1BB683890054E3A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				C81DD4331BB7DB35007CE97E /* JSONNeverDieTests.swift */,
+				C86D3D2C1BBFBA63007FBA24 /* JSONNDModelTests.swift */,
+				C86D3D2E1BBFBB9B007FBA24 /* TestModel.swift */,
 				C81DD43C1BB7DCA7007CE97E /* test.json */,
 				C81DD4351BB7DB35007CE97E /* Info.plist */,
 			);
@@ -87,6 +95,7 @@
 			children = (
 				C88A509C1BB683890054E3A4 /* JSONNeverDie.h */,
 				C89EB9CE1BB7ECFF00207C75 /* JSONNeverDie.swift */,
+				C86D3D2A1BBF8A9B007FBA24 /* JSONNDModel.swift */,
 				C88A509E1BB683890054E3A4 /* Info.plist */,
 			);
 			path = JSONNeverDie;
@@ -203,7 +212,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86D3D2F1BBFBB9B007FBA24 /* TestModel.swift in Sources */,
 				C81DD4341BB7DB35007CE97E /* JSONNeverDieTests.swift in Sources */,
+				C86D3D2D1BBFBA63007FBA24 /* JSONNDModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C89EB9CF1BB7ECFF00207C75 /* JSONNeverDie.swift in Sources */,
+				C86D3D2B1BBF8A9B007FBA24 /* JSONNDModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
