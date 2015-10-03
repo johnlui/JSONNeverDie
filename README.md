@@ -1,14 +1,40 @@
 JSONNeverDie ![Platform](https://camo.githubusercontent.com/770175f6c01d89c84a020706126a9e6399ff76c4/68747470733a2f2f696d672e736869656c64732e696f2f636f636f61706f64732f702f4b696e676669736865722e7376673f7374796c653d666c6174) ![License](https://camo.githubusercontent.com/7813112d6e92298f067080fa7f1039037de6809e/68747470733a2f2f696d672e736869656c64732e696f2f636f636f61706f64732f6c2f4b696e676669736865722e7376673f7374796c653d666c6174) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ---------
 
-JSONNeverDie aims to be a user friendly JSON encoder / decoder for iOS written with pure Swift which never dies.
+JSONNeverDie aims to be a user friendly JSON encoder / decoder for iOS written in pure Swift which never dies.
+
+## Example
+set up a Model:
+
+```swift
+class People: JSONNDModel {
+    var name = ""
+}
+```
+reflex JSON to Model automatic:
+
+```swift
+let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
+let json = JSONND.initWithData(data!)
+let people = People(JSONNDObject: json)
+
+print(people.name) // get "JohnLui"
+```
 
 ## Features
 
+### reflection features
+- [x] JSON to Model reflection automatic
+- [x] auto reflection with no need of init()
+- [x] supports multi-level reflection
+
+[Read the documentation of auto reflection](https://github.com/johnlui/JSONNeverDie/wiki).
+### JSON encode / decode features
 - [x] supports all types: Int, Float, Bool, String, Array
 - [x] user friendly: Xcode can prompt all available types
 - [x] provides both Optional-type(Int?) and Original-type(Int)
-- [x] well tested
+
+And JSONNeverDie is well tested.
 
 
 ## Requirements
@@ -25,7 +51,7 @@ JSONNeverDie aims to be a user friendly JSON encoder / decoder for iOS written w
 import JSONNeverDie
 ```
 
-### basic example
+### basic decoding example
 parse a JSON from network and get a string:
 
 ```swift

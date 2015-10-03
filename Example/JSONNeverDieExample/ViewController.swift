@@ -9,11 +9,16 @@
 import UIKit
 import JSONNeverDie
 
+class People: JSONNDModel {
+    var name = ""
+    var number = 0
+    var array = [Int]()
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world&hello2=123")!)!
         let json = JSONND.initWithData(data)
         print(json["args"]["hello"].stringValue)
@@ -35,6 +40,15 @@ class ViewController: UIViewController {
         print(model.array_values.first)
         print(model.array.first?.key)
         print(model.hey.man.hello)
+        
+        self.testReflection()
+    }
+    
+    func testReflection() {
+        let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
+        let json = JSONND.initWithData(data!)
+        let people = People(JSONNDObject: json)
+        print(people.name) // get "JohnLui"
     }
 
     override func didReceiveMemoryWarning() {
