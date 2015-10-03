@@ -1,12 +1,12 @@
 JSONNeverDie ![Platform](https://img.shields.io/cocoapods/p/Kingfisher.svg?style=flat) ![License](https://img.shields.io/cocoapods/l/Kingfisher.svg?style=flat) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ---------
 
-JSONNeverDie aims to be a user friendly JSON encode / decoder for iOS written with pure Swift which never dies.
+JSONNeverDie aims to be a user friendly JSON encoder / decoder for iOS written with pure Swift which never dies.
 
 ## Features
 
-- [x] supports all types: Int, Float, String, Array
-- [x] user friendly: Xcode can prompt all available methods
+- [x] supports all types: Int, Float, Bool, String, Array
+- [x] user friendly: Xcode can prompt all available types
 - [x] provides both Optional-type(Int?) and Original-type(Int)
 - [x] well tested
 
@@ -56,6 +56,8 @@ let value = json["key"].string
 let value = json["key"].stringValue
 let value = json["key"].float
 let value = json["key"].floatValue
+let value = json["key"].bool
+let value = json["key"].boolValue
 let value = json["key"].array
 let value = json["key"].arrayValue
 
@@ -76,7 +78,7 @@ if let jsonArray = json["array"].array {
 let value = json["array"].arrayValue[0]["key"].int
 ```
 
-### Xcode can prompt all available methods
+### Xcode can prompt all available types
 
 ![pic](http://1.staticonsae.sinaapp.com/images/QQ20150927-1@2x.png)
 
