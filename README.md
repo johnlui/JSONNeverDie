@@ -3,6 +3,8 @@ JSONNeverDie ![Platform](https://camo.githubusercontent.com/770175f6c01d89c84a02
 
 JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
 
+![logo](https://lvwenhan.com/content/uploadfile/201510/01021443880476.png)
+
 ## Example
 set up a Model:
 
