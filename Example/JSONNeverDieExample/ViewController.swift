@@ -11,8 +11,6 @@ import JSONNeverDie
 
 class People: JSONNDModel {
     var name = ""
-    var number = 0
-    var array = [Int]()
 }
 
 class ViewController: UIViewController {
