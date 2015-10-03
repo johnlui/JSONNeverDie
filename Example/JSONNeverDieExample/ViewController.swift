@@ -26,6 +26,15 @@ class ViewController: UIViewController {
                 print("GOT string for key 'hello': ", json["args"]["hello"].stringValue)
             }
         }
+        
+        let jsonForModel = JSONND.initWithData(NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("Model", ofType: "json")!)!)
+        let model = Model(JSONNDObject: jsonForModel)
+        print(model.string)
+        print(model.float)
+        print(model.int)
+        print(model.array_values.first)
+        print(model.array.first?.key)
+        print(model.hey.man.hello)
     }
 
     override func didReceiveMemoryWarning() {
