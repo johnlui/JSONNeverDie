@@ -158,8 +158,7 @@ If you want to run your project on device with JSONNeverDie, just go to PROJECT-
 
 ### Source File
 
-Drag `JSONNeverDie.swift` and `JSONNDModel.swift` into your project.
-
+Clone all files in the `Source` directory into your project.
 
 
 ##Contribution
