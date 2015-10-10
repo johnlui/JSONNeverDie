@@ -67,20 +67,12 @@ public class JSONNDModel: NSObject {
     
     public var jsonString: String? {
         get {
-            if let _ = self.JSONNDObject {
-                return self.JSONNDObject.jsonString
-            } else {
-                return nil
-            }
+            return self.JSONNDObject?.jsonString
         }
     }
     public var jsonStringValue: String {
         get {
-            if let i = self.jsonString {
-                return i
-            } else {
-                return ""
-            }
+            return self.jsonString ?? ""
         }
     }
 }

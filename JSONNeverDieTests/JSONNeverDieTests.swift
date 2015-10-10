@@ -31,22 +31,7 @@ class JSONNeverDieTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testParseJSON() {
-        XCTAssertNotNil(self.json.data, "JSONND.jsonObject should not be nil!")
-    }
-    func testString() {
-        XCTAssertNotNil(self.json["string"].string)
-        XCTAssertEqual(self.json["string"].stringValue, "🐳")
-    }
-    func testInt() {
-        XCTAssertNotNil(self.json["int"].int)
-        XCTAssertEqual(self.json["int"].intValue, 10086)
-    }
-    func testFloat() {
-        XCTAssertNotNil(self.json["float"].float)
-        XCTAssertEqual(self.json["float"].floatValue, 0.01)
-    }
+
     func testBool() {
         XCTAssertEqual(self.json["hey"]["man"]["hello"].boolValue, true)
     }

@@ -88,7 +88,7 @@ public struct JSONND {
     }
     public var floatValue: Float {
         get {
-            return self.float ?? 0
+            return self.float ?? 0.0
         }
     }
     public var string: String? {
