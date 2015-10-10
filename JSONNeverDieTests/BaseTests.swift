@@ -10,13 +10,13 @@ import XCTest
 @testable import JSONNeverDie
 
 class BaseTests: XCTestCase {
-    
+
     var json: JSONND!
-    
+
     override func setUp() {
         super.setUp()
         
-        if let file = NSBundle(forClass:JSONNeverDieTests.self).pathForResource("test", ofType: "json") {
+        if let file = NSBundle(forClass:BaseTests.self).pathForResource("test", ofType: "json") {
             if let data = NSData(contentsOfFile: file) {
                 self.json = JSONND.initWithData(data)
             } else {

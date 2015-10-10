@@ -9,7 +9,7 @@
 import XCTest
 
 class IntTests: BaseTests {
-    
+
     func testInt() {
         XCTAssertNotNil(self.json["int"].int)
         XCTAssertEqual(self.json["int"].intValue, 10086)

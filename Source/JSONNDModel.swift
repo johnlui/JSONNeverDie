@@ -37,9 +37,6 @@ public class JSONNDModel: NSObject {
         super.init()
         
         let mirror = Mirror(reflecting: self)
-        if mirror.superclassMirror()?.children.count == 0 {
-            return
-        }
         for (k, v) in AnyRandomAccessCollection(mirror.children)! {
             if let key = k {
                 let json = self.JSONNDObject[key]
@@ -53,10 +50,6 @@ public class JSONNDModel: NSObject {
                     valueWillBeSet = json.floatValue
                 case _ as Bool:
                     valueWillBeSet = json.boolValue
-                case _ as JSONNDModel:
-                    if let cls = NSClassFromString("JSONNeverDieExample." + key.capitalizedString) as? JSONNDModel.Type {
-                        valueWillBeSet = cls.init(JSONNDObject: json)
-                    }
                 default:
                     break
                 }

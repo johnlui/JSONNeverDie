@@ -9,7 +9,7 @@
 import XCTest
 import JSONNeverDie
 
-class JSONNDModelTests: JSONNeverDieTests {
+class JSONNDModelTests: BaseTests {
     
     var testModel: TestModel!
     
@@ -38,14 +38,22 @@ class JSONNDModelTests: JSONNeverDieTests {
         XCTAssertEqual(self.testModel.float, 0.01)
     }
     func testModelBool() {
-        //XCTAssertEqual(self.testModel.hey.man.hello.boolValue, true)
+        XCTAssertEqual(self.testModel.hey.man.hello.boolValue, true)
     }
     
-    func testModelJSONValue() {
+    func testModelJSONStringValue() {
         let jsonSon: JSONND = ["man": ["hello": true]]
         let jsonSonSon: JSONND = ["hello": true]
         XCTAssertEqual(self.testModel.hey.jsonStringValue, jsonSon.jsonStringValue)
         XCTAssertEqual(self.testModel.hey.man.jsonStringValue, jsonSonSon.jsonStringValue)
+    }
+    
+    func testModelJSONStringValueNil() {
+        class Model: JSONNDModel {}
+        let model = Model(JSONNDObject: JSONND(data: nil))
+        
+        XCTAssertNil(model.jsonString)
+        XCTAssertEqual(model.jsonStringValue, "")
     }
     
     func testModelArrayWithObjects() {

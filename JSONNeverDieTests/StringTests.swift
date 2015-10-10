@@ -9,7 +9,7 @@
 import XCTest
 
 class StringTests: BaseTests {
-    
+
     func testString() {
         XCTAssertNotNil(self.json["string"].string)
         XCTAssertEqual(self.json["string"].stringValue, "🐳")

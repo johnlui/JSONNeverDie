@@ -9,7 +9,7 @@
 import XCTest
 
 class ParseJSONTests: BaseTests {
-    
+
     func testParseJSON() {
         XCTAssertNotNil(self.json.data, "JSONND.jsonObject should not be nil!")
     }

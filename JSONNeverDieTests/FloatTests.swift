@@ -9,7 +9,7 @@
 import XCTest
 
 class FloatTests: BaseTests {
-    
+
     func testFloat() {
         XCTAssertNotNil(self.json["float"].float)
         XCTAssertEqual(self.json["float"].floatValue, 0.01)

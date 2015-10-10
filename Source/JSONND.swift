@@ -36,10 +36,9 @@ public struct JSONND {
         } catch let error as NSError {
             let e = NSError(domain: "JSONNeverDie.JSONParseError", code: error.code, userInfo: error.userInfo)
             NSLog(e.localizedDescription)
-            return JSONND()
+            return JSONND(data: nil)
         }
     }
-    public init() {}
     public init(data: AnyObject!) {
         self.data = data
     }
@@ -57,11 +56,13 @@ public struct JSONND {
         get {
             do {
                 if let _ = self.data {
-                    return NSString(data: try NSJSONSerialization.dataWithJSONObject(self.data, options: .PrettyPrinted), encoding: NSUTF8StringEncoding) as? String
-                } else {
-                    return nil
+                    let d = try NSJSONSerialization.dataWithJSONObject(self.data, options: .PrettyPrinted)
+                    return NSString(data: d, encoding: NSUTF8StringEncoding) as? String
                 }
+                return nil
             } catch {
+                // can not test Errors here.
+                // It seems that NSJSONSerialization.dataWithJSONObject() method dose not support do-try-catch in Swift 2 now.
                 return nil
             }
         }
@@ -108,7 +109,7 @@ public struct JSONND {
     }
     public var boolValue: Bool {
         get {
-            return self.bool  ?? false 
+            return self.bool ?? false
         }
     }
     public var array: [JSONND]? {
@@ -120,12 +121,10 @@ public struct JSONND {
                         result.append(JSONND(data: i))
                     }
                     return result
-                } else {
-                    return nil
                 }
-            } else {
                 return nil
             }
+            return nil
         }
     }
     public var arrayValue: [JSONND] {
