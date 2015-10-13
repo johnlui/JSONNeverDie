@@ -66,9 +66,8 @@ print(json["args"]["hello"].stringValue)
 ### generate a JSONND object
 
 ```swift
-let data = NSData()
-
 // init from NSData
+let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world")!)!
 let json = JSONND.initWithData(data)
 // init from Array
 let jsonArray: JSONND = ["hello", "world", 100]

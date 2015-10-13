@@ -50,7 +50,7 @@ class JSONNDModelTests: BaseTests {
     
     func testModelJSONStringValueNil() {
         class Model: JSONNDModel {}
-        let model = Model(JSONNDObject: JSONND(data: nil))
+        let model = Model(JSONNDObject: JSONND.initWithData(NSData()))
         
         XCTAssertNil(model.jsonString)
         XCTAssertEqual(model.jsonStringValue, "")
