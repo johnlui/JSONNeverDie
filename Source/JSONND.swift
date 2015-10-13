@@ -46,6 +46,9 @@ public struct JSONND {
     init(data: AnyObject!) {
         self.data = data
     }
+    public init() {
+        self.init(data: nil)
+    }
     public init(dictionary: [String: AnyObject]) {
         self.init(any: dictionary)
     }
