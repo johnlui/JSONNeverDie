@@ -30,6 +30,21 @@ class ViewController: UIViewController {
             }
         }
         
+        // init from array
+        let array = ["hello", 123, false]
+        let arrayJSON = JSONND(array: array)
+        print(arrayJSON.array?.first?.string)
+        print(arrayJSON.array?[1].int)
+        print(arrayJSON.array?[2].bool)
+        print(arrayJSON.jsonString)
+        
+        // init from dictionary
+        let dic = ["hello": "NeverDie", "json": 200]
+        let dicJSON = JSONND(dictionary: dic)
+        print(dicJSON["hello"].string)
+        print(dicJSON["json"].int)
+        print(dicJSON.jsonString)
+        
         let jsonForModel = JSONND.initWithData(NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("Model", ofType: "json")!)!)
         let model = Model(JSONNDObject: jsonForModel)
         print(model.string)
@@ -43,8 +58,7 @@ class ViewController: UIViewController {
     }
     
     func testReflection() {
-        let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
-        let json = JSONND.initWithData(data!)
+        let json = JSONND(dictionary: ["name": "JohnLui"])
         let people = People(JSONNDObject: json)
         print(people.name) // get "JohnLui"
     }

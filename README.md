@@ -17,10 +17,8 @@ class People: JSONNDModel {
 reflex JSON to Model automatic:
 
 ```swift
-let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
-let json = JSONND.initWithData(data!)
+let json = JSONND(dictionary: ["name": "JohnLui"])
 let people = People(JSONNDObject: json)
-
 print(people.name) // get "JohnLui"
 ```
 
