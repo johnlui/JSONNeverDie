@@ -67,10 +67,12 @@ print(json["args"]["hello"].stringValue)
 // init from NSData
 let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world")!)!
 let json = JSONND.initWithData(data)
+
 // init from Array
-let jsonArray: JSONND = ["hello", "world", 100]
+let arrayJSON = JSONND(array: ["hello", "world", 100])
+
 // init from Dictionary
-let jsonDictionary: JSONND = ["hello": "world", "hey": "guys"]
+let dictionaryJSON = JSONND(dictionary: ["hello": "world", "hey": "guys"])
 ```
 
 ### get values
