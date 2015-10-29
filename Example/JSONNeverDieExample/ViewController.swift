@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world&hello2=123")!)!
         let json = JSONND.initWithData(data)
         print(json["args"]["hello"].stringValue)
-        print(json.jsonString)
+        print(json.RAW)
         
         if let url = NSURL(string: "http://httpbin.org/get?hello=world") {
             if let data = NSData(contentsOfURL: url) {
                 let json = JSONND.initWithData(data)
-                print("json string: \(json.jsonStringValue)")
+                print("json string: \(json.RAWValue)")
                 print("GOT string for key 'hello': ", json["args"]["hello"].stringValue)
             }
         }
@@ -36,14 +36,14 @@ class ViewController: UIViewController {
         print(arrayJSON.array?.first?.string)
         print(arrayJSON.array?[1].int)
         print(arrayJSON.array?[2].bool)
-        print(arrayJSON.jsonString)
+        print(arrayJSON.RAW)
         
         // init from dictionary
         let dic = ["hello": "NeverDie", "json": 200]
         let dicJSON = JSONND(dictionary: dic)
         print(dicJSON["hello"].string)
         print(dicJSON["json"].int)
-        print(dicJSON.jsonString)
+        print(dicJSON.RAW)
         
         let jsonForModel = JSONND.initWithData(NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("Model", ofType: "json")!)!)
         let model = Model(JSONNDObject: jsonForModel)

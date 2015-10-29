@@ -15,8 +15,8 @@ class JSONInitTests: BaseTests {
         let jsonFromArray: JSONND = ["love", "you", "guys"]
         let jsonFromDictionary: JSONND = ["love": ["you": "guys"]]
         
-        XCTAssertEqual(jsonFromArray.jsonStringValue, "[\n  \"love\",\n  \"you\",\n  \"guys\"\n]")
-        XCTAssertEqual(jsonFromDictionary.jsonStringValue, "{\n  \"love\" : {\n    \"you\" : \"guys\"\n  }\n}")
+        XCTAssertEqual(jsonFromArray.RAWValue, "[\n  \"love\",\n  \"you\",\n  \"guys\"\n]")
+        XCTAssertEqual(jsonFromDictionary.RAWValue, "{\n  \"love\" : {\n    \"you\" : \"guys\"\n  }\n}")
     }
     
     func testJSONInitError() {

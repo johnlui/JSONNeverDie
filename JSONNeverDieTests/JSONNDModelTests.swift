@@ -44,16 +44,16 @@ class JSONNDModelTests: BaseTests {
     func testModelJSONStringValue() {
         let jsonSon: JSONND = ["man": ["hello": true]]
         let jsonSonSon: JSONND = ["hello": true]
-        XCTAssertEqual(self.testModel.hey.jsonStringValue, jsonSon.jsonStringValue)
-        XCTAssertEqual(self.testModel.hey.man.jsonStringValue, jsonSonSon.jsonStringValue)
+        XCTAssertEqual(self.testModel.hey.RAWValue, jsonSon.RAWValue)
+        XCTAssertEqual(self.testModel.hey.man.RAWValue, jsonSonSon.RAWValue)
     }
     
     func testModelJSONStringValueNil() {
         class Model: JSONNDModel {}
         let model = Model(JSONNDObject: JSONND.initWithData(NSData()))
         
-        XCTAssertNil(model.jsonString)
-        XCTAssertEqual(model.jsonStringValue, "")
+        XCTAssertNil(model.RAW)
+        XCTAssertEqual(model.RAWValue, "")
     }
     
     func testModelArrayWithObjects() {

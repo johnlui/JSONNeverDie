@@ -65,7 +65,12 @@ public struct JSONND {
         }
         return JSONND(data: nil)
     }
+    
+    @available (*, unavailable, renamed="RAW")
     public var jsonString: String? {
+        return ""
+    }
+    public var RAW: String? {
         get {
             do {
                 if let _ = self.data {
@@ -80,9 +85,13 @@ public struct JSONND {
             }
         }
     }
+    @available (*, unavailable, renamed="RAWValue")
     public var jsonStringValue: String {
+        return ""
+    }
+    public var RAWValue: String {
         get {
-            return self.jsonString ?? ""
+            return self.RAW ?? ""
         }
     }
     public var int: Int? {
