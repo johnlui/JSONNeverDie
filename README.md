@@ -113,7 +113,7 @@ let value = json["array"].arrayValue[0]["key"].int
 ### get raw string from a JSONND object
 
 ```swift
-let string = json.jsonString
+let string = json.RAW
 ```
 
 
