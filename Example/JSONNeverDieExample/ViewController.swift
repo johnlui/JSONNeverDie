@@ -17,10 +17,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world&hello2=123")!)!
-        let json = JSONND.initWithData(data)
-        print(json["args"]["hello"].stringValue)
-        print(json.RAW)
+        let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
+        let json = JSONND.initWithData(data!)
+        let people = People(JSONNDObject: json)
+        print(people.name)
+
+        let data1 = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world&hello2=123")!)!
+        let json1 = JSONND.initWithData(data1)
+        print(json1["args"]["hello"].stringValue)
+        print(json1.RAW)
         
         if let url = NSURL(string: "http://httpbin.org/get?hello=world") {
             if let data = NSData(contentsOfURL: url) {
