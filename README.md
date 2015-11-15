@@ -3,6 +3,7 @@ JSONNeverDie [中文文档](https://github.com/johnlui/JSONNeverDie/wiki/%E4%B8%
 ![Platform](https://camo.githubusercontent.com/770175f6c01d89c84a020706126a9e6399ff76c4/68747470733a2f2f696d672e736869656c64732e696f2f636f636f61706f64732f702f4b696e676669736865722e7376673f7374796c653d666c6174) ![License](https://img.shields.io/github/license/johnlui/JSONNeverDie.svg?style=flat) ![Language](https://img.shields.io/badge/language-Swift%202-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Travis](https://img.shields.io/travis/johnlui/JSONNeverDie.svg)](https://travis-ci.org/johnlui/JSONNeverDie)
 
 JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
+#### 中文文档
 
 ![logo](https://lvwenhan.com/content/uploadfile/201510/01021443880476.png)
 
@@ -169,3 +170,22 @@ You are welcome to fork and submit pull requests.
 ##License
 
 JSONNeverDie is open-sourced software licensed under the MIT license.
+
+# 中文文档
+
+## 基本示例
+构建一个 Model:
+
+```swift
+class People: JSONNDModel {
+    var name = ""
+}
+```
+从字符串转换成 JSON 再自动映射为 Model:
+
+```swift
+let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
+let json = JSONND.initWithData(data!)
+let people = People(JSONNDObject: json)
+print(people.name) // get "JohnLui"
+```
