@@ -15,7 +15,7 @@ class BaseTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        
+        JSONND.debug = true
         if let file = NSBundle(forClass:BaseTests.self).pathForResource("test", ofType: "json") {
             if let data = NSData(contentsOfFile: file) {
                 self.json = JSONND.initWithData(data)

@@ -120,6 +120,11 @@ let value = json["array"].arrayValue[0]["key"].int
 let string = json.RAW
 ```
 
+### debug
+
+```swift
+JSONND.debug = true
+```
 
 ## Installation
 
