@@ -177,7 +177,7 @@ You are welcome to fork and submit pull requests.
 
 JSONNeverDie is open-sourced software licensed under the MIT license.
 
-# 中文文档
+# 中文介绍
 
 ## 基本示例
 构建一个 Model:
