@@ -4,7 +4,7 @@ JSONNeverDie [中文介绍](#中文介绍)
 
 JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
 
-![logo](https://lvwenhan.com/content/uploadfile/201510/01021443880476.png)
+![logo](https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.png)
 
 ### [中文文档](https://github.com/johnlui/JSONNeverDie/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
 
@@ -112,7 +112,7 @@ let value = json["array"].arrayValue[0]["key"].int
 
 ### Xcode can prompt all available types
 
-![pic](http://1.staticonsae.sinaapp.com/images/QQ20150927-1@2x.png)
+![pic](https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/types.png)
 
 ### get raw string from a JSONND object
 
