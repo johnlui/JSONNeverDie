@@ -46,7 +46,7 @@ public struct JSONND {
         let j: JSONND = [any]
         self.data = j.arrayValue.first != nil ? j.arrayValue.first!.data : nil
     }
-    init(data: AnyObject!) {
+    internal init(data: AnyObject!) {
         self.data = data
     }
     public init() {

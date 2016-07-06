@@ -12,12 +12,16 @@ import JSONNeverDie
 class JSONNDModelTests: BaseTests {
     
     var testModel: TestModel!
+    var man: Man!
     
     override func setUp() {
         super.setUp()
         
         self.testModel = TestModel(JSONNDObject: self.json["test_model"])
         XCTAssertNotNil(self.testModel, "testModel should not be nil!")
+        
+        self.man = Man()
+        XCTAssertEqual(self.man.hello, false, "JSONNDModel init with nothing whould gather init values")
     }
     
     override func tearDown() {

@@ -30,16 +30,23 @@ import Foundation
 
 public class JSONNDModel: NSObject {
     
-    public var JSONNDObject: JSONND!
+    public var JSONNDObject: JSONND?
     
-    public required init(JSONNDObject json: JSONND) {
+    public override init() {
+        super.init()
+    }
+    public init(fromJSONString string: String) {
+        let jsonnd = JSONND.initWithData(string.dataUsingEncoding(NSUTF8StringEncoding)!)
+        self.JSONNDObject = jsonnd
+    }
+    public init(JSONNDObject json: JSONND) {
         self.JSONNDObject = json
         super.init()
         
         let mirror = Mirror(reflecting: self)
         for (k, v) in AnyRandomAccessCollection(mirror.children)! {
-            if let key = k {
-                let json = self.JSONNDObject[key]
+            if let key = k, jSONNDObject = self.JSONNDObject {
+                let json = jSONNDObject[key]
                 var valueWillBeSet: AnyObject?
                 switch v {
                 case _ as String:
