@@ -1,13 +1,15 @@
-JSONNeverDie [中文介绍](#中文介绍)
----------
+<p align="center">
+![logo](https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.jpg)
+</p>
+
+<p align="center">
 ![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
  ![License](https://img.shields.io/github/license/johnlui/JSONNeverDie.svg?style=flat) ![Language](https://img.shields.io/badge/language-Swift%202-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Travis](https://img.shields.io/travis/johnlui/JSONNeverDie.svg)](https://travis-ci.org/johnlui/JSONNeverDie)
+</p>
 
 JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
 
-![logo](https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.jpg)
-
-### [中文文档](https://github.com/johnlui/JSONNeverDie/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
+### [中文介绍](#中文介绍)
 
 ## Example
 set up a Model:
