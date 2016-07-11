@@ -1,5 +1,5 @@
 <p align="center">
-![logo](https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.jpg)
+<img src="https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.jpg">
 </p>
 
 <p align="center">
