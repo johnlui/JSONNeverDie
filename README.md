@@ -7,7 +7,7 @@
     <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/github/license/johnlui/JSONNeverDie.svg?style=flat"></a>
     <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/badge/language-Swift%202-orange.svg"></a>
     <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
-    <a href="https://img.shields.io/travis/johnlui/JSONNeverDie.svg"><img src="https://travis-ci.org/johnlui/JSONNeverDie"></a>
+    <a href="https://travis-ci.org/johnlui/JSONNeverDie"><img src="https://img.shields.io/travis/johnlui/JSONNeverDie.svg"></a>
 </p>
 
 JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
