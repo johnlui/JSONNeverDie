@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         let people = People(JSONNDObject: json)
         print(people.name)
 
-        if let url = NSURL(string: "http://httpbin.org/get?hello=world&hello2=123"),
+        if let url = NSURL(string: "http://httpbin.org/get?hello=world"),
             string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
                 let json1 = JSONND(string: string)
                 print(json1["args"]["hello"].stringValue)

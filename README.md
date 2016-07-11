@@ -20,10 +20,9 @@ class People: JSONNDModel {
 reflex JSON to Model automatic:
 
 ```swift
-let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
-let json = JSONND.initWithData(data!)
+let json = JSONND(string: "{\"name\": \"JohnLui\"}")
 let people = People(JSONNDObject: json)
-print(people.name) // get "JohnLui"
+print(people.name)
 ```
 
 ## Features
@@ -61,23 +60,31 @@ import JSONNeverDie
 parse a JSON from network and get a string:
 
 ```swift
-let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world")!)!
-let json = JSONND.initWithData(data)
-print(json["args"]["hello"].stringValue)
+if let url = NSURL(string: "http://httpbin.org/get?hello=world"),
+    string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+        let json = JSONND(string: string)
+        print(json["args"]["hello"].stringValue)
+}
 ```
 
 ### generate a JSONND object
 
 ```swift
-// init from NSData
-let data = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world")!)!
-let json = JSONND.initWithData(data)
+// init from String
+let json = JSONND(string: "{\"name\": \"JohnLui\"}")
 
 // init from Array
 let arrayJSON = JSONND(array: ["hello", "world", 100])
 
 // init from Dictionary
 let dictionaryJSON = JSONND(dictionary: ["hello": "world", "hey": "guys"])
+
+// init from remote JSON String
+if let url = NSURL(string: "http://httpbin.org/get?hello=world"),
+    string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+        let json = JSONND(string: string)
+        print(json["args"]["hello"].stringValue)
+}
 ```
 
 ### get values
