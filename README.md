@@ -1,6 +1,7 @@
 JSONNeverDie [中文介绍](#中文介绍)
 ---------
-![Platform](https://camo.githubusercontent.com/770175f6c01d89c84a020706126a9e6399ff76c4/68747470733a2f2f696d672e736869656c64732e696f2f636f636f61706f64732f702f4b696e676669736865722e7376673f7374796c653d666c6174) ![License](https://img.shields.io/github/license/johnlui/JSONNeverDie.svg?style=flat) ![Language](https://img.shields.io/badge/language-Swift%202-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Travis](https://img.shields.io/travis/johnlui/JSONNeverDie.svg)](https://travis-ci.org/johnlui/JSONNeverDie)
+![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
+ ![License](https://img.shields.io/github/license/johnlui/JSONNeverDie.svg?style=flat) ![Language](https://img.shields.io/badge/language-Swift%202-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Travis](https://img.shields.io/travis/johnlui/JSONNeverDie.svg)](https://travis-ci.org/johnlui/JSONNeverDie)
 
 JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
 
@@ -35,7 +36,7 @@ print(people.name) // get "JohnLui"
 #### [Read the documentation of auto reflection](https://github.com/johnlui/JSONNeverDie/wiki).
 
 ### JSON encode / decode features
-- [x] supports all types: Int, Float, Bool, String, Array
+- [x] supports all types: Int, Double, Bool, String, Array
 - [x] user friendly: Xcode can prompt all available types
 - [x] provides both Optional-type(Int?) and Original-type(Int)
 
@@ -86,8 +87,8 @@ let value = json["key"].int
 let value = json["key"].intValue
 let value = json["key"].string
 let value = json["key"].stringValue
-let value = json["key"].float
-let value = json["key"].floatValue
+let value = json["key"].double
+let value = json["key"].doubleValue
 let value = json["key"].bool
 let value = json["key"].boolValue
 let value = json["key"].array
@@ -205,3 +206,4 @@ print(people.name) // get "JohnLui"
 ## 开源协议
 
 本项目遵循 MIT 协议开源，具体请插件根目录下的 LICENSE 文件。
+
