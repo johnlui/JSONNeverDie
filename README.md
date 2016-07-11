@@ -1,10 +1,13 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.jpg">
+    <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.jpg"></a>
 </p>
 
 <p align="center">
-![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
- ![License](https://img.shields.io/github/license/johnlui/JSONNeverDie.svg?style=flat) ![Language](https://img.shields.io/badge/language-Swift%202-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Travis](https://img.shields.io/travis/johnlui/JSONNeverDie.svg)](https://travis-ci.org/johnlui/JSONNeverDie)
+    <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/badge/platform-ios-lightgrey.svg"></a>
+    <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/github/license/johnlui/JSONNeverDie.svg?style=flat"></a>
+    <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/badge/language-Swift%202-orange.svg"></a>
+    <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+    <a href="https://img.shields.io/travis/johnlui/JSONNeverDie.svg"><img src="https://travis-ci.org/johnlui/JSONNeverDie"></a>
 </p>
 
 JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
