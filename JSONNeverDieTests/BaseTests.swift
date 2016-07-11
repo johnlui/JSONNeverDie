@@ -16,9 +16,9 @@ class BaseTests: XCTestCase {
     override func setUp() {
         super.setUp()
         JSONND.debug = true
-        if let file = NSBundle(forClass:BaseTests.self).pathForResource("test", ofType: "json") {
-            if let data = NSData(contentsOfFile: file) {
-                self.json = JSONND.initWithData(data)
+        if let url = NSBundle(forClass:BaseTests.self).URLForResource("test", withExtension: "json") {
+            if let string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+                self.json = JSONND(string: string)
             } else {
                 XCTFail("NSData from test JSON file is nil!")
             }

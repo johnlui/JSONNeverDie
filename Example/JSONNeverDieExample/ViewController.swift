@@ -17,22 +17,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
-        let json = JSONND.initWithData(data!)
+        let json = JSONND(string: "{\"name\": \"JohnLui\"}")
         let people = People(JSONNDObject: json)
         print(people.name)
 
-        let data1 = NSData(contentsOfURL: NSURL(string: "http://httpbin.org/get?hello=world&hello2=123")!)!
-        let json1 = JSONND.initWithData(data1)
-        print(json1["args"]["hello"].stringValue)
-        print(json1.RAW)
+        if let url = NSURL(string: "http://httpbin.org/get?hello=world&hello2=123"),
+            string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+                let json1 = JSONND(string: string)
+                print(json1["args"]["hello"].stringValue)
+                print(json1.RAW)
+        }
         
-        if let url = NSURL(string: "http://httpbin.org/get?hello=world") {
-            if let data = NSData(contentsOfURL: url) {
-                let json = JSONND.initWithData(data)
+        if let url = NSURL(string: "http://httpbin.org/get?hello=world"),
+            string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+                let json = JSONND(string: string)
                 print("json string: \(json.RAWValue)")
                 print("GOT string for key 'hello': ", json["args"]["hello"].stringValue)
-            }
         }
         
         // init from array
@@ -50,14 +50,17 @@ class ViewController: UIViewController {
         print(dicJSON["json"].int)
         print(dicJSON.RAW)
         
-        let jsonForModel = JSONND.initWithData(NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("Model", ofType: "json")!)!)
-        let model = Model(JSONNDObject: jsonForModel)
-        print(model.string)
-        print(model.float)
-        print(model.int)
-        print(model.array_values.first)
-        print(model.array.first?.key)
-        print(model.hey.man.hello)
+        if let url = NSBundle.mainBundle().URLForResource("Model", withExtension: "json"),
+            string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+            let jsonForModel = JSONND(string: string)
+            let model = Model(JSONNDObject: jsonForModel)
+            print(model.string)
+            print(model.double)
+            print(model.int)
+            print(model.array_values.first)
+            print(model.array.first?.key)
+            print(model.hey.man.hello)
+        }
         
         self.testReflection()
     }

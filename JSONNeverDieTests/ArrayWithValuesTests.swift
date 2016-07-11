@@ -22,6 +22,6 @@ class ArrayWithValuesTests: BaseTests {
     func testArrayWithValues() {
         XCTAssertEqual(self.array[0].intValue, 10000)
         XCTAssertEqual(self.array[1].stringValue, "🙈")
-        XCTAssertEqual(self.array[2].floatValue, 0.03)
+        XCTAssertEqual(self.array[2].doubleValue, 0.03)
     }
 }

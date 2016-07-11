@@ -13,7 +13,7 @@
     "array_values": [
                      10000, "🙈", 0.03
                      ],
-    "float": 0.01,
+    "double": 0.01,
     "int": 10086,
     "test_model": {
         "hey": {
@@ -30,7 +30,7 @@
         "array_values": [
                          20000, 20001, 20002
                          ],
-        "float": 0.01,
+        "double": 0.01,
         "int": 10086
     }
 }

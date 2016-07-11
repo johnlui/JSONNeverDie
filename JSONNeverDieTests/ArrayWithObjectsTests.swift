@@ -22,16 +22,16 @@ class ArrayWithObjectsTests: BaseTests {
     func testArrayWithObjects() {
         XCTAssertEqual(self.array[0]["key"].intValue, 10010)
         XCTAssertEqual(self.array[1]["key"].stringValue, "🐶")
-        XCTAssertEqual(self.array[2]["key"].floatValue, 0.02)
+        XCTAssertEqual(self.array[2]["key"].doubleValue, 0.02)
     }
     
     func testArrayWithObjectsNil() {
         XCTAssertNil(self.array[0]["key_nil"].int)
         XCTAssertNil(self.array[1]["key_nil"].string)
-        XCTAssertNil(self.array[2]["key_nil"].float)
+        XCTAssertNil(self.array[2]["key_nil"].double)
         
         XCTAssertEqual(self.array[0]["key_nil"].intValue, 0)
         XCTAssertEqual(self.array[1]["key_nil"].stringValue, "")
-        XCTAssertEqual(self.array[2]["key_nil"].floatValue, 0.0)
+        XCTAssertEqual(self.array[2]["key_nil"].doubleValue, 0.0)
     }
 }

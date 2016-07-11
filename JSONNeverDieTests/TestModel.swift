@@ -11,7 +11,7 @@ import JSONNeverDie
 
 class TestModel: JSONNDModel {
     var string = ""
-    var float: Float = 0.0
+    var double = 0.0
     var int = 0
     var array_values = [Int]()
     var array = [ModelOnlyOneKey]()

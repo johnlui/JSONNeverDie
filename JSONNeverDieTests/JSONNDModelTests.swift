@@ -21,12 +21,17 @@ class JSONNDModelTests: BaseTests {
         XCTAssertNotNil(self.testModel, "testModel should not be nil!")
         
         self.man = Man()
-        XCTAssertEqual(self.man.hello, false, "JSONNDModel init with nothing whould gather init values")
+        XCTAssertFalse(self.man.hello, "JSONNDModel init with nothing should gather init values")
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testModelInitfromJSONString() {
+        let m = Man(fromJSONString: "{\"hello\": true}")
+        XCTAssertTrue(m.hello)
     }
     
     func testModelString() {
@@ -37,9 +42,9 @@ class JSONNDModelTests: BaseTests {
         XCTAssertNotNil(self.testModel.int)
         XCTAssertEqual(self.testModel.int, 10086)
     }
-    func testModelFloat() {
-        XCTAssertNotNil(self.testModel.float)
-        XCTAssertEqual(self.testModel.float, 0.01)
+    func testModelDouble() {
+        XCTAssertNotNil(self.testModel.double)
+        XCTAssertEqual(self.testModel.double, 0.01)
     }
     func testModelBool() {
         XCTAssertEqual(self.testModel.hey.man.hello.boolValue, true)
@@ -54,7 +59,7 @@ class JSONNDModelTests: BaseTests {
     
     func testModelJSONStringValueNil() {
         class Model: JSONNDModel {}
-        let model = Model(JSONNDObject: JSONND.initWithData(NSData()))
+        let model = Model(JSONNDObject: JSONND())
         
         XCTAssertNil(model.RAW)
         XCTAssertEqual(model.RAWValue, "")

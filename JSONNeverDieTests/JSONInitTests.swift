@@ -11,7 +11,7 @@ import XCTest
 
 class JSONInitTests: BaseTests {
     
-    func testJSONInit() {
+    func testJSONInitByLiteral() {
         let jsonFromArray: JSONND = ["love", "you", "guys"]
         let jsonFromDictionary: JSONND = ["love": ["you": "guys"]]
         
@@ -19,9 +19,28 @@ class JSONInitTests: BaseTests {
         XCTAssertEqual(jsonFromDictionary.RAWValue, "{\n  \"love\" : {\n    \"you\" : \"guys\"\n  }\n}")
     }
     
+    func testJSONInitByParam() {
+        let jsonFromArray = JSONND(array: ["love", "you", "guys"])
+        let jsonFromDictionary = JSONND(dictionary: ["love": ["you": "guys"]])
+        
+        XCTAssertEqual(jsonFromArray.RAWValue, "[\n  \"love\",\n  \"you\",\n  \"guys\"\n]")
+        XCTAssertEqual(jsonFromDictionary.RAWValue, "{\n  \"love\" : {\n    \"you\" : \"guys\"\n  }\n}")
+    }
+    
     func testJSONInitError() {
-        let json = JSONND.initWithData("haha".dataUsingEncoding(NSUTF8StringEncoding)!)
+        let json = JSONND(string: "haha")
         XCTAssertNil(json.data)
+        
+        XCTAssertNil(json.RAW)
+        XCTAssertEqual(json.RAWValue, "")
+    }
+    
+    func testJSONInitNil() {
+        let json = JSONND()
+        XCTAssertNil(json.data)
+        
+        XCTAssertNil(json.RAW)
+        XCTAssertEqual(json.RAWValue, "")
     }
     
     func testSomething() {

@@ -10,12 +10,12 @@ import JSONNeverDie
 
 class Model: JSONNDModel {
     var string = ""
-    var float: Float = 0.0
+    var double = 0.0
     var int = 0
     var array_values = [Int]()
     var array = [ModelOnlyOneKey]()
     var hey: Hey!
-    required init(JSONNDObject json: JSONND) {
+    override init(JSONNDObject json: JSONND) {
         super.init(JSONNDObject: json)
         
         for i in json["array_values"].arrayValue {
@@ -32,7 +32,7 @@ class ModelOnlyOneKey: JSONNDModel {
 }
 class Hey: JSONNDModel {
     var man: Man!
-    required init(JSONNDObject json: JSONND) {
+    override init(JSONNDObject json: JSONND) {
         super.init(JSONNDObject: json)
         
         self.man = Man(JSONNDObject: json["man"])
