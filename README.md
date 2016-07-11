@@ -5,7 +5,7 @@ JSONNeverDie [中文介绍](#中文介绍)
 
 JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
 
-![logo](https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.png)
+![logo](https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.jpg)
 
 ### [中文文档](https://github.com/johnlui/JSONNeverDie/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
 
@@ -46,135 +46,6 @@ And JSONNeverDie is well tested.
 
 * iOS 7.0+
 * Xcode 7
-
-
-## Use
-
-### import
-
-```swift
-import JSONNeverDie
-```
-
-### basic decoding example
-parse a JSON from network and get a string:
-
-```swift
-if let url = NSURL(string: "http://httpbin.org/get?hello=world"),
-    string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
-        let json = JSONND(string: string)
-        print(json["args"]["hello"].stringValue)
-}
-```
-
-### generate a JSONND object
-
-```swift
-// init from String
-let json = JSONND(string: "{\"name\": \"JohnLui\"}")
-
-// init from Array
-let arrayJSON = JSONND(array: ["hello", "world", 100])
-
-// init from Dictionary
-let dictionaryJSON = JSONND(dictionary: ["hello": "world", "hey": "guys"])
-
-// init from remote JSON String
-if let url = NSURL(string: "http://httpbin.org/get?hello=world"),
-    string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
-        let json = JSONND(string: string)
-        print(json["args"]["hello"].stringValue)
-}
-```
-
-### get values
-
-```swift
-let value = json["key"].int
-let value = json["key"].intValue
-let value = json["key"].string
-let value = json["key"].stringValue
-let value = json["key"].double
-let value = json["key"].doubleValue
-let value = json["key"].bool
-let value = json["key"].boolValue
-let value = json["key"].array
-let value = json["key"].arrayValue
-
-// more than one level
-let value = json["key"]["key1"]["key2"].int
-```
-
-### deal with array
-
-```swift
-if let jsonArray = json["array"].array {
-    for jsonItem in jsonArray {
-        let value = jsonItem["key"].int
-    }
-}
-
-// or just
-let value = json["array"].arrayValue[0]["key"].int
-```
-
-### Xcode can prompt all available types
-
-![pic](https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/types.png)
-
-### get raw string from a JSONND object
-
-```swift
-let string = json.RAW
-```
-
-### debug
-
-```swift
-JSONND.debug = true
-```
-
-## Installation
-
-### Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
-
-You can install Carthage with Homebrew using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate JSONNeverDie into your Xcode project using Carthage, specify it in your Cartfile:
-
-```json
-github "JohnLui/JSONNeverDie"
-```
-
-Then fetch and build JSONNeverDie:
-
-```bash
-carthage update
-```
-
-At last, add it to "Embedded Binaries" in the general panel use the "Add Other..." button. The JSONNeverDie.framework binary file is lying in `./Carthage/Build/iOS` directory.
-
-
-### Manually
-
-```bash
-git submodule add https://github.com/johnlui/JSONNeverDie.git
-open JSONNeverDie
-```
-then drag JSONNeverDie.xcodeproj to your Project, that's it!
-
-If you want to run your project on device with JSONNeverDie, just go to PROJECT->TARGETS->[your project name]->General->Embedded Binaries, click ＋, select JSONNeverDie.frameWork and click "Add".
-
-### Source File
-
-Clone all files in the `Source` directory into your project.
 
 
 ##Contribution
