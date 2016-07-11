@@ -198,10 +198,9 @@ class People: JSONNDModel {
 从字符串转换成 JSON 再自动映射为 Model:
 
 ```swift
-let data = "{\"name\": \"JohnLui\"}".dataUsingEncoding(NSUTF8StringEncoding)
-let json = JSONND.initWithData(data!)
+let json = JSONND(string: "{\"name\": \"JohnLui\"}")
 let people = People(JSONNDObject: json)
-print(people.name) // get "JohnLui"
+print(people.name)
 ```
 
 ### [中文文档](https://github.com/johnlui/JSONNeverDie/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)
