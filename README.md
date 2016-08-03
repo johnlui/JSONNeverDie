@@ -87,5 +87,5 @@ print(people.name)
 
 ## 开源协议
 
-本项目遵循 MIT 协议开源，具体请插件根目录下的 LICENSE 文件。
+本项目遵循 MIT 协议开源，具体请查看根目录下的 LICENSE 文件。
 
