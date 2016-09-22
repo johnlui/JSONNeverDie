@@ -29,8 +29,8 @@
 import Foundation
 
 // stolen from SwiftyJSON
-extension JSONND: ArrayLiteralConvertible {
-    public init(arrayLiteral elements: AnyObject...) {
-        self.init(JSONdata: elements)
+extension JSONND: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: Any...) {
+        self.init(JSONdata: elements as AnyObject!)
     }
 }

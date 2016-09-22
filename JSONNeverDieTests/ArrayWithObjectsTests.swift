@@ -20,7 +20,7 @@ class ArrayWithObjectsTests: BaseTests {
     }
     
     func testArrayWithObjects() {
-        XCTAssertEqual(self.array[0]["key"].intValue, 10010)
+        XCTAssertEqual(self.array[0]["key"].int, 10010)
         XCTAssertEqual(self.array[1]["key"].stringValue, "🐶")
         XCTAssertEqual(self.array[2]["key"].doubleValue, 0.02)
     }

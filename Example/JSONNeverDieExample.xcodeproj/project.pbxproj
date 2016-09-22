@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C86D3D341BBFD981007FBA24 /* Model.json in Resources */ = {isa = PBXBuildFile; fileRef = C86D3D331BBFD981007FBA24 /* Model.json */; settings = {ASSET_TAGS = (); }; };
-		C86D3D371BBFD993007FBA24 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D3D361BBFD993007FBA24 /* Model.swift */; settings = {ASSET_TAGS = (); }; };
+		C86D3D341BBFD981007FBA24 /* Model.json in Resources */ = {isa = PBXBuildFile; fileRef = C86D3D331BBFD981007FBA24 /* Model.json */; };
+		C86D3D371BBFD993007FBA24 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86D3D361BBFD993007FBA24 /* Model.swift */; };
 		C89EB9DD1BB7EDB100207C75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89EB9DC1BB7EDB100207C75 /* AppDelegate.swift */; };
 		C89EB9DF1BB7EDB100207C75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89EB9DE1BB7EDB100207C75 /* ViewController.swift */; };
 		C89EB9E21BB7EDB100207C75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C89EB9E01BB7EDB100207C75 /* Main.storyboard */; };
@@ -155,6 +155,7 @@
 				TargetAttributes = {
 					C89EB9D81BB7EDB100207C75 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -347,6 +348,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lvwenhan.JSONNeverDieExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -360,6 +362,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lvwenhan.JSONNeverDieExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

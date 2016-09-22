@@ -29,12 +29,13 @@
 import Foundation
 
 // stolen from SwiftyJSON
-extension JSONND: DictionaryLiteralConvertible {
-    public init(dictionaryLiteral elements: (String, AnyObject)...) {
-        self.init(JSONdata: elements.reduce([String : AnyObject]()){(dictionary: [String : AnyObject], element:(String, AnyObject)) -> [String : AnyObject] in
+extension JSONND: ExpressibleByDictionaryLiteral {
+    public init(dictionaryLiteral elements: (String, Any)...) {
+        let data = elements.reduce([String: Any]()){(dictionary: [String: Any], element:(String, Any)) -> [String: Any] in
             var d = dictionary
             d[element.0] = element.1
             return d
-            })
+        }
+        self.init(JSONdata: data as AnyObject)
     }
 }

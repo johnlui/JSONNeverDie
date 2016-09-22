@@ -47,7 +47,7 @@ class JSONNDModelTests: BaseTests {
         XCTAssertEqual(self.testModel.double, 0.01)
     }
     func testModelBool() {
-        XCTAssertEqual(self.testModel.hey.man.hello.boolValue, true)
+        XCTAssertEqual(self.testModel.hey.man.hello, true)
     }
     
     func testModelJSONStringValue() {

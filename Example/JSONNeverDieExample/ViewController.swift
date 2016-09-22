@@ -21,37 +21,37 @@ class ViewController: UIViewController {
         let people = People(JSONNDObject: json)
         print(people.name)
 
-        if let url = NSURL(string: "http://httpbin.org/get?hello=world"),
-            string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+        if let url = URL(string: "http://httpbin.org/get?hello=world"),
+            let string = try? String(contentsOf: url, encoding: String.Encoding.utf8) {
                 let json1 = JSONND(string: string)
                 print(json1["args"]["hello"].stringValue)
                 print(json1.RAW)
         }
         
-        if let url = NSURL(string: "http://httpbin.org/get?hello=world"),
-            string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+        if let url = URL(string: "http://httpbin.org/get?hello=world"),
+            let string = try? String(contentsOf: url, encoding: String.Encoding.utf8) {
                 let json = JSONND(string: string)
                 print("json string: \(json.RAWValue)")
                 print("GOT string for key 'hello': ", json["args"]["hello"].stringValue)
         }
         
         // init from array
-        let array = ["hello", 123, false]
-        let arrayJSON = JSONND(array: array)
+        let array = ["hello", 123, false] as [Any]
+        let arrayJSON = JSONND(array: array as [AnyObject])
         print(arrayJSON.array?.first?.string)
         print(arrayJSON.array?[1].int)
         print(arrayJSON.array?[2].bool)
         print(arrayJSON.RAW)
         
         // init from dictionary
-        let dic = ["hello": "NeverDie", "json": 200]
-        let dicJSON = JSONND(dictionary: dic)
+        let dic = ["hello": "NeverDie", "json": 200] as [String : Any]
+        let dicJSON = JSONND(dictionary: dic as [String : AnyObject])
         print(dicJSON["hello"].string)
         print(dicJSON["json"].int)
         print(dicJSON.RAW)
         
-        if let url = NSBundle.mainBundle().URLForResource("Model", withExtension: "json"),
-            string = try? String(contentsOfURL: url, encoding: NSUTF8StringEncoding) {
+        if let url = Bundle.main.url(forResource: "Model", withExtension: "json"),
+            let string = try? String(contentsOf: url, encoding: String.Encoding.utf8) {
             let jsonForModel = JSONND(string: string)
             let model = Model(JSONNDObject: jsonForModel)
             print(model.string)
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
     
     func testReflection() {
-        let json = JSONND(dictionary: ["name": "JohnLui"])
+        let json = JSONND(dictionary: ["name": "JohnLui" as AnyObject])
         let people = People(JSONNDObject: json)
         print(people.name) // get "JohnLui"
     }
