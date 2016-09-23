@@ -5,7 +5,7 @@
 <p align="center">
     <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/badge/platform-ios-lightgrey.svg"></a>
     <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/github/license/johnlui/JSONNeverDie.svg?style=flat"></a>
-    <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/badge/language-Swift%202-orange.svg"></a>
+    <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://img.shields.io/badge/language-Swift%203-orange.svg"></a>
     <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
     <a href="https://travis-ci.org/johnlui/JSONNeverDie"><img src="https://img.shields.io/travis/johnlui/JSONNeverDie.svg"></a>
 </p>
