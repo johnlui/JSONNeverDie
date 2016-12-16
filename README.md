@@ -10,7 +10,7 @@
     <a href="https://travis-ci.org/johnlui/JSONNeverDie"><img src="https://img.shields.io/travis/johnlui/JSONNeverDie.svg"></a>
 </p>
 
-JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die.
+JSONNeverDie is an auto reflection tool from JSON to Model, a user friendly JSON encoder / decoder, aims to never die. Also JSONNeverDie is a very important part of [Pitaya](https://github.com/johnlui/Pitaya).
 
 ### [中文介绍](#中文介绍)
 
