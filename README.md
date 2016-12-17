@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://raw.githubusercontent.com/johnlui/JSONNeverDie/master/assets/logo.jpg"></a>
+    <a href="https://github.com/johnlui/JSONNeverDie"><img src="https://raw.githubusercontent.com/johnlui/JSONNeverDie/swift3/assets/logo.jpg"></a>
 </p>
 
 <p align="center">
