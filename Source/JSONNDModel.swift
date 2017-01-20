@@ -63,7 +63,7 @@ open class JSONNDModel: NSObject {
                 case _ as Bool:
                     valueWillBeSet = json.boolValue
                 default:
-                    return
+                    continue
                 }
                 self.setValue(valueWillBeSet, forKey: key)
             }
