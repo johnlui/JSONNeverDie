@@ -138,7 +138,19 @@ public struct JSONND {
     }
     public var bool: Bool? {
         get {
-            return self.data as? Bool
+            if let result = self.data as? Bool {
+                return result
+            }
+            
+            if let result = self.string {
+                return result.lowercased() == "true" || result.lowercased() == "1"
+            }
+            
+            if let result = self.int {
+                return result == 1
+            }
+
+            return nil
         }
     }
     public var boolValue: Bool {
