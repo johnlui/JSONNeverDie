@@ -14,25 +14,28 @@ class People: JSONNDModel {
 }
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let json = JSONND(string: "{\"name\": \"JohnLui\"}")
+        let json = JSONND(string: "{\"name\": \"JohnLui\", \"intBool\": 1, \"strBool0\": \"True\", \"strBool1\": \"false\", \"strBool2\": \"1\"}")
         let people = People(JSONNDObject: json)
         print(people.name)
-
+        print(json["intBool"].bool)
+        print(json["strBool0"].bool)
+        print(json["strBool1"].bool)
+        print(json["strBool2"].bool)
         if let url = URL(string: "http://httpbin.org/get?hello=world"),
             let string = try? String(contentsOf: url, encoding: String.Encoding.utf8) {
-                let json1 = JSONND(string: string)
-                print(json1["args"]["hello"].stringValue)
-                print(json1.RAW)
+            let json1 = JSONND(string: string)
+            print(json1["args"]["hello"].stringValue)
+            print(json1.RAW)
         }
         
         if let url = URL(string: "http://httpbin.org/get?hello=world"),
             let string = try? String(contentsOf: url, encoding: String.Encoding.utf8) {
-                let json = JSONND(string: string)
-                print("json string: \(json.RAWValue)")
-                print("GOT string for key 'hello': ", json["args"]["hello"].stringValue)
+            let json = JSONND(string: string)
+            print("json string: \(json.RAWValue)")
+            print("GOT string for key 'hello': ", json["args"]["hello"].stringValue)
         }
         
         // init from array
@@ -70,12 +73,12 @@ class ViewController: UIViewController {
         let people = People(JSONNDObject: json)
         print(people.name) // get "JohnLui"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
