@@ -1,3 +1,4 @@
-osx_image: xcode8
+os: osx
+osx_image: xcode9
 language: objective-c
-script: xcodebuild test -project JSONNeverDie.xcodeproj -scheme JSONNeverDie -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest'
+script: xcodebuild test -project JSONNeverDie.xcodeproj -scheme JSONNeverDie -destination 'platform=iOS Simulator,name=iPhone 7,OS=latest'
