@@ -50,7 +50,8 @@ And JSONNeverDie is well tested.
 ## Requirements
 
 * iOS 7.0+
-* Swift 3 (Version 2) in current swift3 branch
+* Swift 4 (Version 3) in current swift4 branch
+* Swift 3 (Version 2) in swift3 branch
 * Swift 2.x / Xcode 7 (Version 1.x) in master branch
 
 
