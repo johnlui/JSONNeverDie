@@ -10,7 +10,7 @@ import UIKit
 import JSONNeverDie
 
 class People: JSONNDModel {
-    var name = ""
+    @objc var name = ""
 }
 
 class ViewController: UIViewController {
