@@ -19,7 +19,7 @@ set up a Model:
 
 ```swift
 class People: JSONNDModel {
-    var name = ""
+    @objc var name = ""
 }
 ```
 reflex JSON to Model automatic:
@@ -70,7 +70,7 @@ JSONNeverDie is open-sourced software licensed under the MIT license.
 
 ```swift
 class People: JSONNDModel {
-    var name = ""
+    @objc var name = ""
 }
 ```
 从字符串转换成 JSON 再自动映射为 Model:
