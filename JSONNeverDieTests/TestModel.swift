@@ -10,12 +10,12 @@ import Foundation
 import JSONNeverDie
 
 class TestModel: JSONNDModel {
-    var string = ""
-    var double = 0.0
-    var int = 0
-    var array_values = [Int]()
-    var array = [ModelOnlyOneKey]()
-    var hey: Hey!
+    @objc var string = ""
+    @objc var double = 0.0
+    @objc var int = 0
+    @objc var array_values = [Int]()
+    @objc var array = [ModelOnlyOneKey]()
+    @objc var hey: Hey!
     override init(JSONNDObject json: JSONND) {
         super.init(JSONNDObject: json)
         
@@ -29,10 +29,10 @@ class TestModel: JSONNDModel {
     }
 }
 class ModelOnlyOneKey: JSONNDModel {
-    var key = 0
+    @objc var key = 0
 }
 class Hey: JSONNDModel {
-    var man: Man!
+    @objc var man: Man!
     override init(JSONNDObject json: JSONND) {
         super.init(JSONNDObject: json)
         
@@ -40,5 +40,5 @@ class Hey: JSONNDModel {
     }
 }
 class Man: JSONNDModel {
-    var hello = false
+    @objc var hello = false
 }
